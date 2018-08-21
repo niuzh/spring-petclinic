@@ -1,5 +1,5 @@
 <!doctype html>
-<html th:fragment="layout (template, menu)">
+<html th:fragment="layout (template, menu)" xmlns:th="http://www.w3.org/1999/xhtml">
 
   <head>
 
@@ -18,11 +18,8 @@
     <![endif]-->
 
     <link rel="stylesheet" th:href="@{/resources/css/petclinic.css}"/>
-
   </head>
-
 <body>
-
   <nav class="navbar navbar-default" role="navigation">
       <div class="container">
           <div class="navbar-header">
@@ -44,35 +41,32 @@
                       </a>
                   </li>
   
-                  <li th:replace="::menuItem ('/','home','home page','home','Home')">
+                  <li th:replace="::menuItem ('/','home','home page','home','首页')">
                       <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                       <span>Home</span>
                   </li>
   
-                  <li th:replace="::menuItem ('/owners/find','owners','find owners','search','Find owners')">
+                  <li th:replace="::menuItem ('/owners/find','owners','查询物主','search','物主')">
                       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                       <span>Find owners</span>
                   </li>
   
-                  <li th:replace="::menuItem ('/vets.html','vets','veterinarians','th-list','Veterinarians')">
+                  <li th:replace="::menuItem ('/vets.html','vets','veterinarians','th-list','兽医')">
                       <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
                       <span>Veterinarians</span>
                   </li>
   
-                  <li th:replace="::menuItem ('/oups','error','trigger a RuntimeException to see how it is handled','warning-sign','Error')">
+                  <li th:replace="::menuItem ('/oups','error','trigger a RuntimeException to see how it is handled','warning-sign','错误')">
                       <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
                       <span>Error</span>
                   </li>
-  
               </ul>
           </div>
       </div>
   </nav>
   <div class="container-fluid">
       <div class="container xd-container">
-  
           <th:block th:include="${template}"/>
-
         <br/>
         <br/>
         <div class="container">
@@ -84,11 +78,8 @@
         </div>
       </div>
   </div>
-
   <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
   <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
   <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-
 </body>
-
 </html>

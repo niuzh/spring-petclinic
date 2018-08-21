@@ -7,14 +7,14 @@ ALTER DATABASE petclinic
 GRANT ALL PRIVILEGES ON petclinic.* TO pc@localhost IDENTIFIED BY 'pc';
 
 USE petclinic;
-
+-- 兽医
 CREATE TABLE IF NOT EXISTS vets (
   id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30),
   last_name VARCHAR(30),
   INDEX(last_name)
 ) engine=InnoDB;
-
+-- 专业
 CREATE TABLE IF NOT EXISTS specialties (
   id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(80),
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS types (
   name VARCHAR(80),
   INDEX(name)
 ) engine=InnoDB;
-
+-- 主人
 CREATE TABLE IF NOT EXISTS owners (
   id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30),
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS owners (
   telephone VARCHAR(20),
   INDEX(last_name)
 ) engine=InnoDB;
-
+-- 宠物
 CREATE TABLE IF NOT EXISTS pets (
   id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(30),
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS pets (
   FOREIGN KEY (owner_id) REFERENCES owners(id),
   FOREIGN KEY (type_id) REFERENCES types(id)
 ) engine=InnoDB;
-
+-- 宠物访问记录
 CREATE TABLE IF NOT EXISTS visits (
   id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   pet_id INT(4) UNSIGNED NOT NULL,
