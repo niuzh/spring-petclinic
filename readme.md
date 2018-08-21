@@ -8,6 +8,7 @@
 	git clone https://github.com/niuzh/spring-petclinic.git
 	cd spring-petclinic
 	./mvnw spring-boot:run
+	或者在IDE中Plugins中启动spring-boot:run
 ```
 
 本地启动后访问地址: http://localhost:8080/
