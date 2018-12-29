@@ -33,6 +33,7 @@
 
   <dependencies>
     <!-- Spring and Spring Boot dependencies -->
+      <!--运维检测-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
